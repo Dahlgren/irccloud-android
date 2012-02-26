@@ -1,31 +1,36 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    >
-    <ListView android:id="@+id/messages"
+    android:orientation="vertical" >
+
+    <ListView
+        android:id="@+id/messages"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:stackFromBottom="true"
-        android:transcriptMode="alwaysScroll"
+        android:layout_height="0dip"
         android:layout_weight="1"
-    />
+        android:listSelector="@android:color/transparent"
+        android:stackFromBottom="true"
+        android:transcriptMode="alwaysScroll" />
+
     <LinearLayout
-        android:orientation="horizontal"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        >
-        <EditText android:id="@+id/send_message"
-            android:layout_width="wrap_content"
+        android:orientation="horizontal" >
+
+        <EditText
+            android:id="@+id/send_message"
+            android:layout_width="0dip"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
             android:layout_gravity="bottom"
-        />
-        <Button android:id="@+id/button_send"
+            android:layout_weight="1"
+            android:inputType="textCapSentences" />
+
+        <Button
+            android:id="@+id/button_send"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/send"
-        />
+            android:text="@string/send" />
     </LinearLayout>
+
 </LinearLayout>

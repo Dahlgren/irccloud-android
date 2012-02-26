@@ -1,8 +1,25 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
- android:layout_height="?android:attr/listPreferredItemHeight"
- android:layout_width="fill_parent" android:orientation="vertical">
-    <TextView android:text="TextView" android:layout_height="wrap_content" android:layout_width="wrap_content" android:textAppearance="?android:attr/textAppearanceMedium" android:id="@+id/channelName"></TextView>
-    <TextView android:text="TextView" android:layout_height="wrap_content" android:layout_width="wrap_content" android:textAppearance="?android:attr/textAppearanceSmall" android:id="@+id/topic"></TextView>
- </LinearLayout>
+    android:layout_width="fill_parent"
+    android:layout_height="?android:attr/listPreferredItemHeight"
+    android:orientation="vertical"
+    android:padding="4dip" >
 
+    <TextView
+        android:id="@+id/channelName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="CHANNEL"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:textStyle="bold" >
+    </TextView>
+
+    <TextView
+        android:id="@+id/topic"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="TOPIC"
+        android:textAppearance="?android:attr/textAppearanceSmall" >
+    </TextView>
+
+</LinearLayout>
