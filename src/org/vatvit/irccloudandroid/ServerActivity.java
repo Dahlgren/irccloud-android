@@ -1,17 +1,10 @@
 package org.vatvit.irccloudandroid;
 
-import java.util.ArrayList;
-
 import org.vatvit.irccloud.Channel;
 import org.vatvit.irccloud.Client;
-import org.vatvit.irccloud.Private;
 import org.vatvit.irccloud.Server;
-import org.vatvit.irccloud.events.ServerListener;
-import org.vatvit.irccloudandroid.ServersActivity.ServerAdapter;
 
-import android.app.Activity;
 import android.app.ExpandableListActivity;
-import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
@@ -21,19 +14,13 @@ import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuInflater;
-import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AbsListView;
-import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
 import android.widget.BaseExpandableListAdapter;
 import android.widget.ExpandableListView;
-import android.widget.ExpandableListView.ExpandableListContextMenuInfo;
-import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
-import android.widget.AdapterView.OnItemClickListener;
 
 public class ServerActivity extends ExpandableListActivity {
 	private static final String TAG = "IRCCloudServerActivity";
@@ -75,7 +62,8 @@ public class ServerActivity extends ExpandableListActivity {
 
 		adapter = new ServerItemAdapter();
 		setListAdapter(adapter);
-
+		this.getExpandableListView().expandGroup(0);
+		this.getExpandableListView().expandGroup(1);
 	}
 
 	public boolean onChildClick(ExpandableListView parent, View v,
@@ -129,7 +117,7 @@ public class ServerActivity extends ExpandableListActivity {
 			// Center the text vertically
 			textView.setGravity(Gravity.CENTER_VERTICAL | Gravity.LEFT);
 			// Set the text starting position
-			textView.setPadding(36, 0, 0, 0);
+			textView.setPadding(52, 0, 0, 0);
 			return textView;
 		}
 
@@ -168,9 +156,9 @@ public class ServerActivity extends ExpandableListActivity {
 
 		public Object getGroup(int groupPosition) {
 			if (groupPosition == 0) {
-				return "Channels";
+				return getResources().getString(R.string.channels);
 			} else {
-				return "Private chats";
+				return getResources().getString(R.string.private_chats);
 			}
 		}
 
