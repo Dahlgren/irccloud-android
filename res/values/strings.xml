@@ -1,16 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">Irccloud-android</string>
-    <string name="Email">email</string>
-    <string name="password">password</string>
-    <string name="login">login</string>
-    <string name="servername">servername</string>
-    <string name="channels">channels</string>
-    <string name="private_chats">private chats</string>
-    <string name="join_channel">Join channel</string>
-    <string name="new_private">New private chat</string>
+    <string name="app_name">IRCCloud</string>
+    <string name="Email">Email</string>
+    <string name="password">Password</string>
+    <string name="login">Login</string>
+    <string name="channels">Channels</string>
+    <string name="private_chats">Private Chats</string>
+    <string name="join_channel">Join Channel</string>
+    <string name="new_private">New Private Chat</string>
     <string name="disconnect">Disconnect</string>
-    <string name="change_nick">Change nick</string>
+    <string name="change_nick">Change Nick</string>
     <string name="help">Help</string>
     <string name="send">Send</string>
 </resources>
