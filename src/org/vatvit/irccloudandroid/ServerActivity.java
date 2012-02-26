@@ -3,6 +3,7 @@ package org.vatvit.irccloudandroid;
 import org.vatvit.irccloud.Channel;
 import org.vatvit.irccloud.Client;
 import org.vatvit.irccloud.Server;
+import org.vatvit.irccloud.events.ServersListener;
 
 import android.app.ExpandableListActivity;
 import android.content.Intent;
@@ -62,6 +63,31 @@ public class ServerActivity extends ExpandableListActivity {
 
 		adapter = new ServerItemAdapter();
 		setListAdapter(adapter);
+
+		client.addServerListener(new ServersListener() {
+
+			@Override
+			public void connectedToServer(Server server) {
+				Log.d(TAG, "Server "+server.toString());
+				refresh.sendEmptyMessage(0);
+				
+
+			}
+
+			@Override
+			public void disconnectedFromServer(Server server) {
+				Log.d(TAG, "Server disconnect "+server.toString());
+				refresh.sendEmptyMessage(0);
+			}
+
+			@Override
+			public void update() {
+				Log.d(TAG, "Server update");
+				refresh.sendEmptyMessage(0);
+			}
+
+		});
+		
 		this.getExpandableListView().expandGroup(0);
 		this.getExpandableListView().expandGroup(1);
 	}
